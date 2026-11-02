@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Link, NavLink, Navigate, Route, Routes, useLocation, useSearchParams } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Check, ChevronDown, ChevronRight, CircleHelp, DraftingCompass, Factory, Layers3, Mail, MapPin, Menu, Phone, Ruler, ShieldCheck, X } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, ChevronRight, CircleHelp, DraftingCompass, Factory, Layers3, Mail, MapPin, Phone, Ruler, ShieldCheck, X } from 'lucide-react'
 
 const company = {
   name: 'Steelgrave Private Limited',
@@ -150,11 +150,9 @@ function Brand({ onClick }) {
 }
 
 function Header() {
-  const [open, setOpen] = useState(false)
   const location = useLocation()
   const productMenuRef = useRef(null)
   const closeMenu = () => {
-    setOpen(false)
     productMenuRef.current?.removeAttribute('open')
   }
 
@@ -166,7 +164,7 @@ function Header() {
     <header className="catalog-header">
       <div className="catalog-nav container">
         <Brand onClick={closeMenu} />
-        <nav className={open ? 'catalog-links catalog-links-open' : 'catalog-links'} aria-label="Main navigation">
+        <nav className="catalog-links" aria-label="Main navigation">
           <NavLink to="/about" onClick={closeMenu}>About</NavLink>
           <details className="nav-dropdown" ref={productMenuRef}>
             <summary>Products <ChevronDown size={13} /></summary>
@@ -189,9 +187,6 @@ function Header() {
           <a href={`tel:${company.phoneLink}`} aria-label={`Call ${company.phone}`}><Phone size={14} /> {company.phone}</a>
           <Link className="button button-orange button-small" to="/request-a-quote" onClick={closeMenu}>Request a quote <ArrowUpRight size={15} /></Link>
         </div>
-        <button className="menu-toggle" onClick={() => setOpen((value) => !value)} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open}>
-          {open ? <X /> : <Menu />}
-        </button>
       </div>
     </header>
   )
