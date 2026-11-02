@@ -788,6 +788,28 @@
   line-height: 1.75;
 }
 
+.manufacturing-concept-figure {
+  margin: 32px 0;
+  background: #fff;
+}
+
+.manufacturing-concept-figure img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+}
+
+.manufacturing-concept-figure figcaption {
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.manufacturing-concept-figure figcaption strong {
+  color: var(--brand-navy);
+}
+
 .fabrication-section,
 .quality-page-grid {
   background: #fff;

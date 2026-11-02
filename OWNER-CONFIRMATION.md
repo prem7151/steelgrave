@@ -74,7 +74,7 @@ Please supply original, approved Steelgrave photographs of:
 - Inspection and measurement activity, if these are performed.
 - Packaging, storage, and dispatch.
 
-The site labels generic stock images as illustrative. The Gallery contains explicit placeholders until verified company images are supplied; stock images must not be represented as Steelgrave's facility or products.
+The Gallery also includes three illustrative visual concepts for brand identity, with notices that they are not photographs of the actual premises, staff, or equipment. The homepage and Manufacturing page use these concepts with the same clarification. Replace them with approved facility photographs if the owner prefers only documentary images.
 
 ## Features requiring backend or hosting configuration
 
@@ -106,7 +106,7 @@ Update this report after testing the local site and obtaining owner confirmation
 | Quote/contact form validation | PASS | Required name/email fields reject blanks; malformed email addresses are rejected. Product category can be preselected from a product enquiry link. |
 | Email-draft quote/contact submission | NOT TESTED | Actual email-client launch and delivery are not verified; visitors must review and send the generated draft themselves. |
 | Telephone, email, WhatsApp, and map links | PASS | Local hrefs contain the supplied contact details and updated address. Actual calls, message delivery, and the precise map pin are not verified. |
-| Gallery lightbox | PASS | Images open in a dialog; Escape and the close button dismiss it. All gallery images are illustrative stock, not Steelgrave photographs. |
+| Gallery lightbox | PASS | Images open in a dialog; Escape and the close button dismiss it. Supplied photos and illustrative visual concepts are distinguished by captions. |
 | PDF catalogue/specification downloads | NOT TESTED | No download is published because approved documents have not been supplied. |
 | Responsive layouts | PASS | No horizontal overflow observed at 390 px, 768 px, 900 px, 1024 px, and 1440 px. |
 | Form delivery, secure storage, and uploads | NOT TESTED | No backend, email delivery, database, or file upload service is configured. |

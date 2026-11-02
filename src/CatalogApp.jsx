@@ -13,7 +13,7 @@ const company = {
 }
 
 const media = {
-  hero: '/photos/facility/9.jpeg',
+  hero: '/photos/facility/Gemini_Generated_Image_1me6d71me6d71me6.jpg',
   fabrication: '/photos/products/11.jpeg',
 }
 
@@ -136,7 +136,14 @@ const galleryItems = [
   ['Coil processing equipment', 'facility/Screenshot 2026-11-01 183954.png'],
   ['Stainless-steel coil handling', 'facility/Screenshot 2026-11-01 184038.png'],
   ['Steelgrave facility exterior', 'facility/steel main door.jpeg'],
-].map(([category, path]) => ({ category, image: `/photos/${path.split('/').map(encodeURIComponent).join('/')}` }))
+  ['Steelgrave visual identity concept', 'facility/Gemini_Generated_Image_1me6d71me6d71me6.jpg', true],
+  ['Steelgrave manufacturing visual concept', 'facility/Gemini_Generated_Image_81buhf81buhf81bu.jpg', true],
+  ['Steelgrave workshop identity concept', 'facility/Gemini_Generated_Image_e2lamhe2lamhe2la.jpg', true],
+].map(([category, path, isConcept = false]) => ({
+  category,
+  isConcept,
+  image: `/photos/${path.split('/').map(encodeURIComponent).join('/')}`,
+}))
 
 function Brand({ onClick }) {
   return <Link className="brand" to="/" onClick={onClick} aria-label="Steelgrave Private Limited home"><img className="brand-logo" src="/steel%20png.png" alt="Steelgrave Private Limited" /></Link>
@@ -315,8 +322,8 @@ function ProductCard({ product }) {
 
 function Home() {
   return <>
-    <section className="catalog-hero"><img src={media.hero} alt="Stainless-steel materials in the Steelgrave workshop" /><div className="catalog-hero-shade" /><div className="hero-grid" />
-      <div className="container catalog-hero-content"><span className="status-pill"><span className="status-dot" /> Stainless steel manufacturing · Gujarat, India</span><h1>Engineered in Stainless Steel. <em>Made for Real Applications.</em></h1><p>Stainless-steel pipe manufacturing from coil and fabrication enquiries in grades SS 202 and SS 304.</p><div className="hero-actions"><CTA to="/products">Explore our products</CTA><CTA dark>Request a quote</CTA></div><ImageNote>Workshop photo supplied by Steelgrave.</ImageNote></div>
+    <section className="catalog-hero"><img src={media.hero} alt="Illustrative concept of a stainless-steel tube manufacturing facility" /><div className="catalog-hero-shade" /><div className="hero-grid" />
+      <div className="container catalog-hero-content"><span className="status-pill"><span className="status-dot" /> Stainless steel manufacturing · Gujarat, India</span><h1>Engineered in Stainless Steel. <em>Made for Real Applications.</em></h1><p>Stainless-steel pipe manufacturing from coil and fabrication enquiries in grades SS 202 and SS 304.</p><div className="hero-actions"><CTA to="/products">Explore our products</CTA><CTA dark>Request a quote</CTA></div><ImageNote>Illustrative visual concept - not a photograph of Steelgrave's actual facility.</ImageNote></div>
       <div className="container hero-foot"><span className="scroll-hint"><span className="scroll-line" /> Steelgrave Private Limited</span><span className="hero-location"><MapPin size={15} /> Kalol, Gujarat</span></div>
     </section>
     <section className="section product-intro"><div className="container"><div className="section-heading-row"><Heading eyebrow="About Steelgrave" title="Your partner in stainless-steel manufacturing" text="Steelgrave Private Limited works with stainless-steel coil as raw material to manufacture pipe products and undertakes fabrication work. Product scope and project requirements are reviewed with each customer." /><Link className="text-link dark-link" to="/about">About the company <ArrowRight size={16} /></Link></div><div className="home-facts"><div><strong>Coil-based</strong><span>stainless-steel pipe manufacturing</span></div><div><strong>SS 202 / SS 304</strong><span>main working grades; confirm availability</span></div><div><strong>Gujarat, India</strong><span>business location</span></div></div></div></section>
@@ -552,7 +559,7 @@ function Manufacturing() {
     ['05', 'Surface, inspection, and release', 'Finishing, visual and dimensional checks, any weld inspection, material documents, and packaging requirements should be stated in the purchase specification. Which operations and records Steelgrave provides must be confirmed before order.'],
   ]
   return <Page eyebrow="Manufacturing" title="From stainless-steel coil to pipe products" intro="Steelgrave manufactures stainless-steel pipe products using coil as raw material. The stages below explain a typical coil-based route; the exact process, equipment, and in-house or outsourced steps depend on the confirmed product and order.">
-    <section className="section process-section-catalog"><div className="container"><Heading eyebrow="Manufacturing overview" title="Understand the route from coil to finished section" text="A coil-based hollow-section process typically prepares and forms strip into a tube, joins the longitudinal seam where the product is welded, and completes the section to the agreed dimensions. Details must be matched to the actual Steelgrave product." /><div className="numbered-process">{stages.map(([number, title, text]) => <article className="manufacturing-stage" key={number}><div><span>{number}</span><strong>{title}</strong></div><p>{text}</p></article>)}</div><div className="technical-note"><strong>Order review:</strong> identify the actual welding/joining method (if applicable), product standard, dimensional tolerances, inspection scope, required records, and any outsourced operations. ASTM A554 mechanical tubing and ASTM A312 pipe are different product specifications and must not be interchanged.</div><CTA product="Stainless-steel pipe manufacturing" /></div></section>
+    <section className="section process-section-catalog"><div className="container"><Heading eyebrow="Manufacturing overview" title="Understand the route from coil to finished section" text="A coil-based hollow-section process typically prepares and forms strip into a tube, joins the longitudinal seam where the product is welded, and completes the section to the agreed dimensions. Details must be matched to the actual Steelgrave product." /><div className="numbered-process">{stages.map(([number, title, text]) => <article className="manufacturing-stage" key={number}><div><span>{number}</span><strong>{title}</strong></div><p>{text}</p></article>)}</div><figure className="manufacturing-concept-figure"><img src="/photos/facility/Gemini_Generated_Image_81buhf81buhf81bu.jpg" alt="Illustrative concept of a stainless-steel tube manufacturing workshop" loading="lazy" /><figcaption><strong>Illustrative visual concept.</strong> This image represents the Steelgrave manufacturing identity; it is not a photograph of the actual premises, staff, equipment, or production.</figcaption></figure><div className="technical-note"><strong>Order review:</strong> identify the actual welding/joining method (if applicable), product standard, dimensional tolerances, inspection scope, required records, and any outsourced operations. ASTM A554 mechanical tubing and ASTM A312 pipe are different product specifications and must not be interchanged.</div><CTA product="Stainless-steel pipe manufacturing" /></div></section>
   </Page>
 }
 
@@ -592,10 +599,10 @@ function Gallery() {
   }, [activeImage])
 
   return <>
-    <Page eyebrow="Gallery" title="Product and manufacturing gallery" intro="Photos of fabrication work, manufacturing activity, and the facility, supplied for the Steelgrave website. Product and process details should be confirmed for each enquiry.">
-      <section className="section gallery-section"><div className="container"><div className="gallery-grid">{galleryItems.map((item, index) => <article className="gallery-card" key={item.image}><button type="button" onClick={() => setActiveImage(index)} aria-label={`Open photo: ${item.category}`}><img src={item.image} alt={item.category} loading="lazy" /><span className="gallery-card-label">{item.category}</span><span className="gallery-card-note">Photo supplied by Steelgrave</span></button></article>)}</div><div className="catalog-callout"><div><span className="eyebrow">Product enquiry</span><h3>Ask us about a product or fabrication requirement.</h3></div><CTA /></div></div></section>
+    <Page eyebrow="Gallery" title="Product and manufacturing gallery" intro="Browse photos supplied for Steelgrave's website alongside illustrative visual concepts for the brand. Concept images express the intended industrial identity and do not depict actual Steelgrave facilities, staff, or equipment. Product and process details should be confirmed for each enquiry.">
+      <section className="section gallery-section"><div className="container"><div className="gallery-grid">{galleryItems.map((item, index) => <article className={`gallery-card${item.isConcept ? ' gallery-card-concept' : ''}`} key={item.image}><button type="button" onClick={() => setActiveImage(index)} aria-label={`Open ${item.isConcept ? 'visual concept' : 'photo'}: ${item.category}`}><img src={item.image} alt={item.category} loading="lazy" /><span className="gallery-card-label">{item.category}</span><span className="gallery-card-note">{item.isConcept ? 'Illustrative concept - not an actual Steelgrave facility photograph' : 'Photo supplied by Steelgrave'}</span></button></article>)}</div><div className="catalog-callout"><div><span className="eyebrow">Product enquiry</span><h3>Ask us about a product or fabrication requirement.</h3></div><CTA /></div></div></section>
     </Page>
-    {activeImage !== null && <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={galleryItems[activeImage].category} onClick={(event) => { if (event.target === event.currentTarget) setActiveImage(null) }}><div className="gallery-lightbox-content"><button className="gallery-lightbox-close" type="button" onClick={() => setActiveImage(null)} aria-label="Close image"><X size={22} /></button><img src={galleryItems[activeImage].image} alt={galleryItems[activeImage].category} /><p>{galleryItems[activeImage].category} - photo supplied by Steelgrave.</p></div></div>}
+    {activeImage !== null && <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={galleryItems[activeImage].category} onClick={(event) => { if (event.target === event.currentTarget) setActiveImage(null) }}><div className="gallery-lightbox-content"><button className="gallery-lightbox-close" type="button" onClick={() => setActiveImage(null)} aria-label="Close image"><X size={22} /></button><img src={galleryItems[activeImage].image} alt={galleryItems[activeImage].category} /><p>{galleryItems[activeImage].isConcept ? `${galleryItems[activeImage].category} - illustrative visual concept, not an actual Steelgrave facility photograph.` : `${galleryItems[activeImage].category} - photo supplied by Steelgrave.`}</p></div></div>}
   </>
 }
 
