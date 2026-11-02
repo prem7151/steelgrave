@@ -3,18 +3,20 @@
 
 :root {
   font-family: 'Manrope', sans-serif;
-  color: #172028;
-  background: #f5f7fa;
+  color: #20242a;
+  background: #f7f5f3;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --ink: #172028;
-  --steel: #3b434c;
-  --blue: #0a5ea8;
-  --orange: #ff7a00;
-  --paper: #f5f7fa;
-  --line: #dce2e7;
-  --muted: #66717b;
+  --ink: #20242a;
+  --steel: #343a40;
+  --brand-navy: #10104a;
+  --brand-red: #980b2e;
+  --blue: var(--brand-navy);
+  --orange: var(--brand-red);
+  --paper: #f4f5f6;
+  --line: #dce1e5;
+  --muted: #626c75;
 }
 
 * { box-sizing: border-box; }
