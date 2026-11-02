@@ -22,6 +22,10 @@
   font-size: 13px;
 }
 
+.section-heading h2 {
+  font-size: clamp(38px, 4.5vw, 64px);
+}
+
 .catalog-links a,
 .nav-dropdown summary {
   color: var(--ink);

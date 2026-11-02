@@ -146,7 +146,7 @@ const galleryItems = [
 }))
 
 function Brand({ onClick }) {
-  return <Link className="brand" to="/" onClick={onClick} aria-label="Steelgrave Private Limited home"><img className="brand-logo" src="/steel%20png.png" alt="Steelgrave Private Limited" /></Link>
+  return <Link className="brand" to="/" onClick={onClick} aria-label="Steelgrave Private Limited home"><img className="brand-logo" src={`${import.meta.env.BASE_URL}steel%20png.png`} alt="Steelgrave Private Limited" /></Link>
 }
 
 function Header() {
