@@ -13,7 +13,7 @@ const company = {
 }
 
 const media = {
-  hero: '/photos/facility/Gemini_Generated_Image_1me6d71me6d71me6.jpg',
+  hero: '/photos/facility/camera1.jpg',
   fabrication: '/photos/products/11.jpeg',
 }
 
@@ -136,9 +136,9 @@ const galleryItems = [
   ['Coil processing equipment', 'facility/Screenshot 2026-11-01 183954.png'],
   ['Stainless-steel coil handling', 'facility/Screenshot 2026-11-01 184038.png'],
   ['Steelgrave facility exterior', 'facility/steel main door.jpeg'],
-  ['Steelgrave visual identity concept', 'facility/Gemini_Generated_Image_1me6d71me6d71me6.jpg', true],
-  ['Steelgrave manufacturing visual concept', 'facility/Gemini_Generated_Image_81buhf81buhf81bu.jpg', true],
-  ['Steelgrave workshop identity concept', 'facility/Gemini_Generated_Image_e2lamhe2lamhe2la.jpg', true],
+  ['Steelgrave visual identity concept', 'facility/camera1.jpg', true],
+  ['Steelgrave manufacturing visual concept', 'facility/camera2.jpg', true],
+  ['Steelgrave workshop identity concept', 'facility/camera3.jpg', true],
 ].map(([category, path, isConcept = false]) => ({
   category,
   isConcept,
@@ -554,7 +554,7 @@ function Manufacturing() {
     ['05', 'Surface, inspection, and release', 'Finishing, visual and dimensional checks, any weld inspection, material documents, and packaging requirements should be stated in the purchase specification. Which operations and records Steelgrave provides must be confirmed before order.'],
   ]
   return <Page eyebrow="Manufacturing" title="From stainless-steel coil to pipe products" intro="Steelgrave manufactures stainless-steel pipe products using coil as raw material. The stages below explain a typical coil-based route; the exact process, equipment, and in-house or outsourced steps depend on the confirmed product and order.">
-    <section className="section process-section-catalog"><div className="container"><Heading eyebrow="Manufacturing overview" title="Understand the route from coil to finished section" text="A coil-based hollow-section process typically prepares and forms strip into a tube, joins the longitudinal seam where the product is welded, and completes the section to the agreed dimensions. Details must be matched to the actual Steelgrave product." /><div className="numbered-process">{stages.map(([number, title, text]) => <article className="manufacturing-stage" key={number}><div><span>{number}</span><strong>{title}</strong></div><p>{text}</p></article>)}</div><figure className="manufacturing-concept-figure"><img src="/photos/facility/Gemini_Generated_Image_81buhf81buhf81bu.jpg" alt="Illustrative concept of a stainless-steel tube manufacturing workshop" loading="lazy" /><figcaption><strong>Illustrative visual concept.</strong> This image represents the Steelgrave manufacturing identity; it is not a photograph of the actual premises, staff, equipment, or production.</figcaption></figure><div className="technical-note"><strong>Order review:</strong> identify the actual welding/joining method (if applicable), product standard, dimensional tolerances, inspection scope, required records, and any outsourced operations. ASTM A554 mechanical tubing and ASTM A312 pipe are different product specifications and must not be interchanged.</div><CTA product="Stainless-steel pipe manufacturing" /></div></section>
+    <section className="section process-section-catalog"><div className="container"><Heading eyebrow="Manufacturing overview" title="Understand the route from coil to finished section" text="A coil-based hollow-section process typically prepares and forms strip into a tube, joins the longitudinal seam where the product is welded, and completes the section to the agreed dimensions. Details must be matched to the actual Steelgrave product." /><div className="numbered-process">{stages.map(([number, title, text]) => <article className="manufacturing-stage" key={number}><div><span>{number}</span><strong>{title}</strong></div><p>{text}</p></article>)}</div><figure className="manufacturing-concept-figure"><img src="/photos/facility/camera2.jpg" alt="Illustrative concept of a stainless-steel tube manufacturing workshop" loading="lazy" /><figcaption><strong>Illustrative visual concept.</strong> This image represents the Steelgrave manufacturing identity; it is not a photograph of the actual premises, staff, equipment, or production.</figcaption></figure><div className="technical-note"><strong>Order review:</strong> identify the actual welding/joining method (if applicable), product standard, dimensional tolerances, inspection scope, required records, and any outsourced operations. ASTM A554 mechanical tubing and ASTM A312 pipe are different product specifications and must not be interchanged.</div><CTA product="Stainless-steel pipe manufacturing" /></div></section>
   </Page>
 }
 
